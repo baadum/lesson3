@@ -9,27 +9,29 @@
 <body>
   
 <script>
-  var userAge = +prompt('Сколько вам лет?');
-    var shorterAge = userAge%100 
-    var ending
 
-        if(shorterAge >= 5 && shorterAge <= 20) {
-            ending = ' лет';
-        }
-        else {
-            shorterAge = shorterAge%10             
-            if (shorterAge ==1) {
-                ending = ' год';
-            }
-            else if (shorterAge>1 && shorterAge<5) {
-                ending = ' года';
-            }
-            else {
-                ending = ' лет';
-            }
-        }
+var obj1 = {
+    key1: 'value1',
+    key2: 'value2',
+    key3: 'value3', 
+    key4: 'value4',
+    obj2: {
+        key5: 'value5',
+        key6: 'value6',
+        key7: 'value7',
+        key8: 'value8',
+    }
+};
+var clone = {};
 
-        alert( userAge + ending ); 
+function objectClone(obj1) {
+    for (var key in obj1) {
+        clone[key]=obj1[key]
+    };
+    return clone
+}
+alert(objectClone(obj1));
+
 </script>
 </body>
 </html>
